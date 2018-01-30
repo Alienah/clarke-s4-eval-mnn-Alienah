@@ -46,10 +46,10 @@ class App extends Component {
 					(objectPotter, id) => //Le damos una identidad  o clave a cada objeto, según instrucciones del warning de react
 						<li key={id}>
 							<CharCard
-								name={objectPotter.name}
-								link={objectPotter.image}
-								house={objectPotter.house}
-								alive={objectPotter.alive}
+								name ={ objectPotter.name }
+								link ={ objectPotter.image }
+								house ={ objectPotter.house }
+								alive ={ objectPotter.alive }
 							/>
 						</li>)}
 			</ul>);
@@ -60,9 +60,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">My Harry Potter Characters</h1>
         </header>
-        <main>
-					<input value={this.state.input} className="App-search" onChange={this.handleFilterByNameOnchange}/>
-					{this.paintCharacters()	}
+        <main className="App-main">
+					<input value ={ this.state.input } className="App-search" onChange ={ this.handleFilterByNameOnchange }/>
+					{ this.paintCharacters()	}
 				</main>
       </div>
     );

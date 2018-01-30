@@ -1,1 +1,55 @@
+.App {
+  text-align: center;
+}
 
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+@media all and (min-width: 768px) {
+	.App-header {
+		  height: 50px;
+	}
+}
+.App-main{
+	padding: 30px;
+}
+.App-title {
+  font-size: 1.5em;
+	letter-spacing: 0.2em;
+}
+.App-search{
+	margin-top: 30px;
+	width: 60%;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid black;
+	padding: 0 4px;
+}
+@media all and (min-width: 768px) {
+	.App-search{
+		width: 400px;
+	}
+}
+.App-filter-button{
+	margin-left: 10px;
+	width: 70px;
+	height: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.App-list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+@media all and (min-width: 768px){
+	.App-list {
+		grid-column-gap: 10px;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
