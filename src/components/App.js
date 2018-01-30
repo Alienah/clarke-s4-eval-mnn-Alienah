@@ -10,37 +10,41 @@ class App extends Component {
 
 		this.state = {
 			characters: [],
-			filteredCharShowed: false
+			filteredActivated: false,
+			input: ''
 		};
-
 	}
+
 	componentDidMount() {
 		fetch('http://hp-api.herokuapp.com/api/characters')
 			.then(response => response.json())
 			.then(json => {
-				const list = json;
 				this.setState({
-					characters: list
+					characters: json,
 				});
-			//console.log(list);
 			})
 	}
+
+	handleFilterByNameOnchange(e) {
+		const inputValue = e.target.value.toLowerCase();
+		this.setState({
+			filteredActivated: !this.state.filteredActivated,
+			input: inputValue
+		});
+	}
+
 	paintCharacters() {
 		let charactersShowed = this.state.characters;
 
-		if(this.state.filteredCharShowed){
-      charactersShowed =
-        this.state.characters.filter(function (objectPotter) {
-					return objectPotter.name.includes("Harry")});
-						console.log(this.inputValue);
-    }
-//console.log(this.inputValue);
+		if(this.state.filteredActivated){
+			charactersShowed = this.state.characters.filter(objectPotter => objectPotter.name.toLowerCase().includes(this.state.input));
+		}
 
 		return (
 			<ul className="App-list">{
 				charactersShowed.map(
-					objectPotter =>
-						<li>
+					(objectPotter, id) => //Le damos una identidad  o clave a cada objeto, según instrucciones del warning de react
+						<li key={id}>
 							<CharCard
 								name={objectPotter.name}
 								link={objectPotter.image}
@@ -50,27 +54,15 @@ class App extends Component {
 						</li>)}
 			</ul>);
 	}
-	handleFilterByNameOnchange(e) {
-		const inputValue = e.target.value.toLowerCase();
-		// if (inputValue.includes) {
-		//
-		// }
-		//console.log(inputValue);
-		this.setState({
-			filteredCharShowed: !this.state.filteredCharShowed
-		});
-	}
   render() {
-		console.log(this.inputValue);
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">My Harry Potter Characters</h1>
         </header>
         <main>
-					<input className="App-search" onChange={this.handleFilterByNameOnchange}/>
-					<button className="App-filter-button">Filtrar</button>
-					{this.paintCharacters()}
+					<input value={this.state.input} className="App-search" onChange={this.handleFilterByNameOnchange}/>
+					{this.paintCharacters()	}
 				</main>
       </div>
     );
