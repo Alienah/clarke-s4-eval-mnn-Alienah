@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharCard from './CharCard';
-import BackgroundPotter from './../images/harry-background.jpg';
 
 class App extends Component {
 	constructor(props) {
@@ -51,6 +50,7 @@ class App extends Component {
 						link ={ objectPotter.image }
 						house ={ objectPotter.house }
 						alive ={ objectPotter.alive }
+						actor ={ objectPotter.actor }
 						/>
 					</li>)}
 					</ul>);

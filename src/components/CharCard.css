@@ -22,8 +22,8 @@
 	padding-top: 250px;
 }
 .CharHouses{
-	height: 50px;
-	width: 40px;
+	height: 80px;
+	width: 70px;
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
@@ -38,7 +38,7 @@
 	width: 200px;
 }
 .CharHouseText{
-	padding-top: 50px;
+	padding-top: 80px;
 	display: block;
 	height: 0;
 }
@@ -58,6 +58,6 @@
 	margin-bottom: 0;
 }
 .imagen-muerte{
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
 }
