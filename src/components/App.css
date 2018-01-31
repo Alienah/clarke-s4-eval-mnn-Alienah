@@ -17,7 +17,7 @@
 	}
 }
 .App-main{
-	padding: 40px;
+	padding: 30px;
 	background-image: url('../images/harry-background.jpg');
 	background-color: rgba(100, 135, 146, 0.9);
 	background-position: top center;
@@ -68,7 +68,7 @@
 	padding: 0;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-row-gap: 20px;
+	grid-row-gap: 10px;
 }
 @media all and (min-width: 768px){
 	.App-list {

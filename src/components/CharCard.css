@@ -1,4 +1,55 @@
-.Char-image {
+.Char-card{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.Char-image-container{
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
 	height: 250px;
 	width: 200px;
+	overflow: hidden;
+}
+.Char-image {
+	height: 0;
+	padding-top: 250px;
+}
+.CharHouses{
+	height: 50px;
+	width: 40px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	overflow: hidden;
+}
+.CharHouseText{
+	padding-top: 50px;
+	display: block;
+	height: 0;
+}
+.Char-dates-container{
+	padding: 5px 20px;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+	width: 200px;
+}
+.Gryffindor {
+	background-image: url('../images/Gryffindor.png');
+}
+.Slytherin{
+	background-image: url('../images/Slytherin.png');
+}
+.Ravenclaw{
+	background-image: url('../images/Ravenclaw.png');
+}
+.Hufflepuff{
+	background-image: url('../images/Hufflepuff.png');
+}
+.imagen-muerte{
+	height: 40px;
+	width: 40px;
 }
