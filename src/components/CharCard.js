@@ -14,7 +14,7 @@ class CharCard extends React.Component{
 				<div className="Char-image-container" style={{backgroundImage: `url(${this.props.link})`}}><img className="Char-image" src={ this.props.link} alt={ this.props.name }/></div>
 				<div className="Char-dates-container">
 					<div className={`CharHouses ${this.props.house}`}><span className="CharHouseText">Pertenece a la casa { this.props.house }</span></div>
-					<p>{this.props.alive? '':<img className="imagen-muerte" src={Hufflepuff} alt="is death"/>}</p>
+					<p className="CharAliveContainer">{this.props.alive? '':<img className="imagen-muerte" src={Hufflepuff} alt="is death"/>}</p>
 				</div>
 			</div>
 		);

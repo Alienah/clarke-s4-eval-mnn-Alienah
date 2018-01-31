@@ -11,6 +11,11 @@
 	height: 250px;
 	width: 200px;
 	overflow: hidden;
+	border-radius: 50%;
+	transition:all .5s ease;
+}
+.Char-image-container:hover{
+	transform:scale(1.15);
 }
 .Char-image {
 	height: 0;
@@ -24,18 +29,18 @@
 	background-size: cover;
 	overflow: hidden;
 }
-.CharHouseText{
-	padding-top: 50px;
-	display: block;
-	height: 0;
-}
 .Char-dates-container{
-	padding: 5px 20px;
+	padding: 20px 20px 0 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	width: 200px;
+}
+.CharHouseText{
+	padding-top: 50px;
+	display: block;
+	height: 0;
 }
 .Gryffindor {
 	background-image: url('../images/Gryffindor.png');
@@ -48,6 +53,9 @@
 }
 .Hufflepuff{
 	background-image: url('../images/Hufflepuff.png');
+}
+.CharAliveContainer{
+	margin-bottom: 0;
 }
 .imagen-muerte{
 	height: 40px;
