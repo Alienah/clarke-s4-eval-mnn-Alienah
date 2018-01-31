@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharCard from './CharCard';
+import BackgroundPotter from './../images/harry-background.jpg';
 
 class App extends Component {
 	constructor(props) {
@@ -61,6 +62,7 @@ class App extends Component {
 					<h1 className="App-title">My <span className="harry">Harry Potter</span> Characters</h1>
 				</header>
 				<main className="App-main">
+					<div className="App-background"></div>
 					<input value ={ this.state.input } className="App-search" onChange ={ this.handleFilterByNameOnchange }/>
 					{ this.paintCharacters()	}
 				</main>
