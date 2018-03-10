@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharCard from './CharCard';
+import Search from './Search';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.handleFilterByNameOnchange = this.handleFilterByNameOnchange.bind(this);
+		this.handleFilterByHouseOnChange = this.handleFilterByHouseOnChange.bind(this);
 
 		this.state = {
 			characters: [],
-			filteredActivated: false,
-			input: ''
+			input: '',
+			selected: ''
 		};
 	}
 
@@ -28,23 +30,31 @@ class App extends Component {
 	handleFilterByNameOnchange(e) {
 		const inputValue = e.target.value.toLowerCase();
 		this.setState({
-			filteredActivated: !this.state.filteredActivated,
+
 			input: inputValue
 		});
 	}
+	handleFilterByHouseOnChange(e) {
+		const selectValue = e.target.value;
+		this.setState({
+			selected: selectValue
+		})
+	}
+
 
 	paintCharacters() {
-		let charactersShowed = this.state.characters;
+		// let charactersShowed = this.state.characters;
 
-		if(this.state.filteredActivated){
-			charactersShowed = this.state.characters.filter(objectPotter => objectPotter.name.toLowerCase().includes(this.state.input));
-		}
+
+		let charactersShowed = this.state.characters.filter(objectPotter => objectPotter.name.toLowerCase().includes(this.state.input))
+			.filter(objectPotter=> objectPotter.house.includes(this.state.selected));
+
 
 		return (
 			<ul className="App-list">{
 				charactersShowed.map(
-					(objectPotter, id) => //Le damos una identidad  o clave a cada objeto, según instrucciones del warning de react
-					<li key={id}>
+					(objectPotter) => //Le damos una identidad  o clave a cada objeto, según instrucciones del warning de react
+						<li key={objectPotter.name}>
 						<CharCard
 						name ={ objectPotter.name }
 						link ={ objectPotter.image }
@@ -63,7 +73,10 @@ class App extends Component {
 				</header>
 				<main className="App-main">
 					<div className="App-background"></div>
-					<input value ={ this.state.input } className="App-search" onChange ={ this.handleFilterByNameOnchange }/>
+					<Search
+						onChangeFilterFunction ={ this.handleFilterByNameOnchange }
+						onChangeFilterHouseFunction = {this.handleFilterByHouseOnChange}
+					/>
 					{ this.paintCharacters()	}
 				</main>
 			</div>
